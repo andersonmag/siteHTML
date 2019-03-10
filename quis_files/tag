@@ -1,0 +1,42 @@
+(function(w, d, s) {
+  try {
+    d = w.top.document || d; w = w.top.document ? w.top : w;
+  } catch (e) {}
+  var ttag = function() {
+    var min_slot = 1;
+
+/*
+var n_slot1;
+var n_slot2;
+var min_slot;
+var tt_slot;
+
+setTimeout(function(){
+  
+var n_slot1 = document.querySelectorAll('.row .col-left #synopsis-details');
+
+var n_slot2 = document.querySelectorAll('#contentlayout #col_main > div, .article-container #article-content > p, .col-left .article-container #article-content > br,.col-left .section .editorial-content br,.section .reviews-press-comment .item');
+
+if (n_slot1.length > 0) {
+	min_slot = 1;
+  	tt_slot = n_slot1;
+} else {
+  	min_slot = 2;
+  	tt_slot = n_slot2;
+}
+
+}, 500);
+*/
+    w.teads.page(32327).placement(44086, {slider: {allow_corner_position: false, allow_top_position: false}, "css":"margin: 20px auto 20px auto; max-width: 550px; ","callbacks":{"AdLoaded":function () {var iframe = window.document.querySelectorAll('.teads-inread iframe')[0];
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var btn = innerDoc.querySelectorAll(".close-button")[0] || innerDoc.querySelectorAll(".close-button");
+console.log("btn "+ btn);
+btn.style = "background-color: rgba(168, 168, 168, 0.9);";}},"format":"inread","slot":{"btf":false,"selector":".article-container #article-content > div,.row .col-left #synopsis-details, #contentlayout #col_main > div, .article-container #article-content > p, .col-left .article-container #article-content > br,.col-left .section .editorial-content br,.section .reviews-press-comment .item","minimum":min_slot}}).serve();
+  };
+  if (w.teads && w.teads.page) { ttag(); }
+  else if (!w.teadsscript) {
+    var protocol = w.location.protocol.match(/^https?:$/) ? w.location.protocol : 'https:';
+    s.src = protocol + '//a.teads.tv/media/format/v3/teads-format.min.js';
+    s.async = true; s.onload = ttag; w.teadsscript = d.getElementsByTagName('head')[0].appendChild(s);
+  }
+})(window, document, document.createElement('script'));
